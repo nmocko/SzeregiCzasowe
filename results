@@ -1,0 +1,646 @@
+Euclidean standard (p = 2) for sets 'Original':
+
+Subset 0: 10.311807697536858
+Subset 1: 14.64135798087593
+Subset 2: 65.53306745591766
+Subset 3: 551.6964452160072
+Subset 4: 258.23683858744505
+Subset 5: 340.72707249001905
+Subset 6: 1481.5964339595646
+Subset 7: 1575.3545576461413
+Subset 8: 690.9144289265735
+Subset 9: 1196.077526992593
+
+Min: Subset 0: 10.311807697536858 --> subset_indexes: [0, 350]
+Max: Subset 7: 1575.3545576461413 --> subset_indexes: [2454, 2803]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Euclidean standard (p = 2) for sets 'Power3':
+
+Subset 0: 3397438.409412317
+Subset 1: 15241756.109554078
+Subset 2: 1149616609.2681355
+Subset 3: 334167547488.63995
+Subset 4: 79342364584.03354
+Subset 5: 85890385407.99483
+Subset 6: 10686003270589.822
+Subset 7: 11401438247962.545
+Subset 8: 1240775109431.2554
+Subset 9: 13085372673602.549
+
+Min: Subset 0: 3397438.409412317 --> subset_indexes: [0, 350]
+Max: Subset 9: 13085372673602.549 --> subset_indexes: [3155, 3504]
+============================
+
+Minkowski standard with p = 5, for sets 'Power3':
+
+Subset 0: 8763074.876990316
+Subset 1: 40797817.10152672
+Subset 2: 3418365920.6376247
+Subset 3: 930148632211.5892
+Subset 4: 267452572152.66238
+Subset 5: 175766377417.97577
+Subset 6: 23202122153617.38
+Subset 7: 22236549846598.797
+Subset 8: 2748444438158.821
+Subset 9: 30661255482941.223
+
+Min: Subset 0: 8763074.876990316 --> subset_indexes: [0, 350]
+Max: Subset 9: 30661255482941.223 --> subset_indexes: [3155, 3504]
+============================
+
+Euclidean standard (p = 2) for sets 'Detrending':
+
+Subset 0: 12.289532998382997
+Subset 1: 15.001324088185482
+Subset 2: 65.2426421873654
+Subset 3: 551.6575857331654
+Subset 4: 257.84622930357483
+Subset 5: 341.52939401849875
+Subset 6: 1480.6326214815451
+Subset 7: 1576.3200277053738
+Subset 8: 691.8461895857248
+Subset 9: 1193.0635533312136
+
+Min: Subset 0: 12.289532998382997 --> subset_indexes: [0, 350]
+Max: Subset 7: 1576.3200277053738 --> subset_indexes: [2454, 2803]
+============================
+
+Minkowski standard with p = 5, for sets 'Detrending':
+
+Subset 0: 22.31134787336926
+Subset 1: 30.897332743273047
+Subset 2: 172.91363735493056
+Subset 3: 1228.881911507786
+Subset 4: 627.5379828160089
+Subset 5: 932.8767504484908
+Subset 6: 2969.0861922787767
+Subset 7: 2577.8393544329865
+Subset 8: 1445.4232387820944
+Subset 9: 2443.9429999686386
+
+Min: Subset 0: 22.31134787336926 --> subset_indexes: [0, 350]
+Max: Subset 6: 2969.0861922787767 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 20.96725709451831
+Subset 1: 30.902726028604665
+Subset 2: 174.46296397045234
+Subset 3: 1230.5805164955266
+Subset 4: 625.8611848126116
+Subset 5: 926.5691658093948
+Subset 6: 2967.8388156331766
+Subset 7: 2574.4856877521456
+Subset 8: 1437.4106927639245
+Subset 9: 2447.3667382366743
+
+Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
+Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
+============================
+
