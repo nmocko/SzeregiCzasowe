@@ -229,4 +229,5 @@ if __name__ == "__main__":
 
     # Calculate Minkowski's standard for previously set 'power' and 'sets' values
     lab3.Minkowski_standard(power, sets)
+    lab3.Minkowski_standard(power, sets)
 
