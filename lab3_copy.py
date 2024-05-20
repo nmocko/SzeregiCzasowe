@@ -91,8 +91,8 @@ class Lab:
         for i in range(k):
             subsets[i] = math.pow(subsets[i]/subsets_count[i], 1/p)
 
-        print(subsets)
-        print(subsets_count)
+        # print(subsets)
+        # print(subsets_count)
         # print("Calculations completed!")
 
         # Saving results (lab3)
@@ -102,13 +102,23 @@ class Lab:
     def lab4_zad1(self, width, p):
         k = math.floor((width/100)*self.n)
         result_euclidean = []
+        print(f"k: {k}")
+        print(f"self.n: {self.n}")
+
+        for i in range(k):
+            result_euclidean.append(0)
 
         for i in range(self.n - k):
-            set1 = self.csv_file['Open'][i:k+1].copy()
-            set2 = self.csv_file['Close'][i:k+1].copy()
+
+            set1 = list(self.csv_file['Open'][i:i+k+1].copy())
+            set2 = list(self.csv_file['Close'][i:i+k+1].copy())
+            # print(f"i: {i}")
+            # print(f"set1: {set1}")
             # print(f"set1[0]: {set1[0]}")
             subsets, subsets_count = self.Minkowski_standard(p, 1, set1, set2)
             result_euclidean.append(subsets[0])
+
+        # print(f"result_euclidean: {result_euclidean}\nlen(result_euclidean) = {len(result_euclidean)}")
 
         self.csv_file[f'MovingWindow{width}'] = result_euclidean
         self.csv_file.to_csv(self.csv_file_path, index=False)
@@ -234,7 +244,7 @@ if __name__ == "__main__":
     # Which transformed-with-power sets should be used
     sets_power = 2
 
-    lab = Lab('BTC-USD_changed.csv')
+    lab = Lab('BTC-USD_lab4.csv')
 
     # Create a new pair of columns transformed with power "p"
     # lab.Power_set(p)
@@ -249,6 +259,6 @@ if __name__ == "__main__":
     # lab.choose_sets_lab3(power, sets, choice)
 
     # Calculate distance for given moving window width
-    width = 1
+    width = 5
     lab.lab4_zad1(width, power)
 
