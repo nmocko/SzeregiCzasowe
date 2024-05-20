@@ -72,7 +72,13 @@ class Lab:
             case _:
                 print("Please enter a number 1, 2 or 3")
                 return
-        self.Minkowski_standard(p, k, set1, set2)
+        subsets, subset_count = self.Minkowski_standard(p, k, set1, set2)
+
+        print(f"subsets: {subsets}")
+        self.lab3_saving_results(subsets, subset_count, set_name, p, k)
+
+        # self.csv_file[f'Minkowski_{p}'] = subsets[0]
+        # self.csv_file.to_csv(self.csv_file_path, index=False)
 
     def Minkowski_standard(self, p, k, set1, set2):
         # print("Calculating...")
@@ -95,6 +101,7 @@ class Lab:
         # print(subsets_count)
         # print("Calculations completed!")
 
+
         # Saving results (lab3)
         # self.lab3_saving_results(subsets, subsets_count, set_name, p, k, set1, set2)
         return subsets, subsets_count
@@ -112,21 +119,39 @@ class Lab:
 
             set1 = list(self.csv_file['Open'][i:i+k+1].copy())
             set2 = list(self.csv_file['Close'][i:i+k+1].copy())
-            # print(f"i: {i}")
-            # print(f"set1: {set1}")
-            # print(f"set1[0]: {set1[0]}")
             subsets, subsets_count = self.Minkowski_standard(p, 1, set1, set2)
             result_euclidean.append(subsets[0])
 
-        # print(f"result_euclidean: {result_euclidean}\nlen(result_euclidean) = {len(result_euclidean)}")
-
         self.csv_file[f'MovingWindow{width}'] = result_euclidean
         self.csv_file.to_csv(self.csv_file_path, index=False)
+        return
 
+    def lab4_zad2(self, p):
+        width = [50, 100, 150]
+        result_set = []
+        print(f"self.n: {self.n}")
+
+        for i in range(len(width)):
+            print(f"k: {width}")
+
+            k = width[i]
+            for j in range(k):
+                result_set.append(0)
+
+            set1 = list(self.csv_file['Open'][k:].copy())
+            set2 = list(self.csv_file['Close'][:-k].copy())
+
+            subsets, subsets_count = self.Minkowski_standard(p, 1, set1, set2)
+            result_set.append(subsets[0])
+            set_name = f"Shift_{p}_{k}"
+
+            # self.csv_file[f'MovingWindow_{p}_{width}'] = result_set
+            # self.csv_file.to_csv(self.csv_file_path, index=False)
+            self.lab3_saving_results(subsets, subsets_count, set_name, p, 1)
         return
 
     # Saving results to the file (lab3)
-    def lab3_saving_results(self, subsets, subsets_count, set_name, p, k, set1, set2):
+    def lab3_saving_results(self, subsets, subsets_count, set_name, p, k, set1=None, set2=None):
         f = open('results', 'a')
         if p == 2:
             f.write(f"Euclidean standard (p = 2) for sets '{set_name}':\n\n")
@@ -168,9 +193,9 @@ class Lab:
                 f"============================\n\n")
         f.close()
 
-        print("Drawing a figure\nClose window to continue!")
-        date = self.csv_file['Date']
-        draw_figure(set1.to_numpy().flatten(), set2.to_numpy().flatten(), date.to_numpy().flatten(),  [min_begin_ind, min_end_ind], [max_begin_ind, max_end_ind], choice)
+        # print("Drawing a figure\nClose window to continue!")
+        # date = self.csv_file['Date']
+        # draw_figure(set1.to_numpy().flatten(), set2.to_numpy().flatten(), date.to_numpy().flatten(),  [min_begin_ind, min_end_ind], [max_begin_ind, max_end_ind], choice)
 
     # Method creating a new pair of columns transformed by powering them with value of 'p'
     def Power_set(self, p):
@@ -196,7 +221,7 @@ class Lab:
         if columnName is not None:
             del self.csv_file[columnName]
         self.csv_file.to_csv(self.csv_file_path, index=False)
-        print(f"Deleted columns transformed with power {p}")
+        print(f"Deleted columns transformed with name: {columnName}")
 
     # Method creating a new pair of columns transformed by subtracting trend value from each row value
     def Detrending(self):
@@ -237,9 +262,9 @@ class Lab:
 
 if __name__ == "__main__":
 
-    power = 5
-    sets = 10
-    choice = 5  # Choose a set:  1. Original  2. Power  3. Detrending
+    power = 2
+    sets = 1
+    choice = 1  # Choose a set:  1. Original  2. Power  3. Detrending
 
     # Which transformed-with-power sets should be used
     sets_power = 2
@@ -250,7 +275,8 @@ if __name__ == "__main__":
     # lab.Power_set(p)
 
     # Delete an existing pair of columns transformed with power "p"
-    # lab.Column_del(None, p)
+    # lab.Column_del("MovingWindow1")
+    # lab.Column_del("MovingWindow5")
 
     # Create detrending columns of the original columns
     # lab.Detrending()
@@ -258,7 +284,11 @@ if __name__ == "__main__":
     # Calculate Minkowski's standard for previously set 'power' and 'sets' values (lab3)
     # lab.choose_sets_lab3(power, sets, choice)
 
-    # Calculate distance for given moving window width
-    width = 5
-    lab.lab4_zad1(width, power)
+    # Calculate distance for given moving window width (lab 4 task 1)
+    # power = 2
+    # width = 5
+    # lab.lab4_zad1(width, power)
+
+    # Calculate distance for specified 3 windows widths (lab 4 task 2)`
+    lab.lab4_zad2(power)
 

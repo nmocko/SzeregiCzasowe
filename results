@@ -644,3 +644,44 @@ Min: Subset 0: 20.96725709451831 --> subset_indexes: [0, 350]
 Max: Subset 6: 2967.8388156331766 --> subset_indexes: [2103, 2453]
 ============================
 
+Euclidean standard (p = 2) for sets 'Original':
+
+Subset 0: 1110.4153504603914
+
+Min: Subset 0: 1110.4153504603914 --> subset_indexes: [0, 1952]
+Max: Subset 0: 1110.4153504603914 --> subset_indexes: [0, 1952]
+============================
+
+Minkowski standard with p = 5, for sets 'Original':
+
+Subset 0: 2397.7980494349326
+
+Min: Subset 0: 2397.7980494349326 --> subset_indexes: [0, 1952]
+Max: Subset 0: 2397.7980494349326 --> subset_indexes: [0, 1952]
+============================
+
+
+Euclidean standard (p = 2) for sets 'Shift_2_50':
+
+Subset 0: 8768.315321612721
+
+Min: Subset 0: 8768.315321612721 --> subset_indexes: [0, 1902]
+Max: Subset 0: 8768.315321612721 --> subset_indexes: [0, 1902]
+============================
+
+Euclidean standard (p = 2) for sets 'Shift_2_100':
+
+Subset 0: 13141.539846620293
+
+Min: Subset 0: 13141.539846620293 --> subset_indexes: [0, 1852]
+Max: Subset 0: 13141.539846620293 --> subset_indexes: [0, 1852]
+============================
+
+Euclidean standard (p = 2) for sets 'Shift_2_150':
+
+Subset 0: 15775.819496651187
+
+Min: Subset 0: 15775.819496651187 --> subset_indexes: [0, 1802]
+Max: Subset 0: 15775.819496651187 --> subset_indexes: [0, 1802]
+============================
+
