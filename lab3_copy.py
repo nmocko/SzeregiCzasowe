@@ -40,9 +40,9 @@ class Lab:
             print("Read file with 'readCSVfile' method")
         else:
             print(self.csv_file)
+        return
 
-
-    def choose_sets(self, p, k, choice, sets_power=0):
+    def choose_sets_lab3(self, p, k, choice, sets_power=0):
         match choice:
             case 1:
                 set_name = "Original"
@@ -75,15 +75,14 @@ class Lab:
         self.Minkowski_standard(p, k, set1, set2)
 
     def Minkowski_standard(self, p, k, set1, set2):
-        set_name = ''
-
-        print("Calculating...")
-        m = self.n / k        # Saving results to the file
+        # print("Calculating...")
+        set_len = len(set1)
+        m = set_len / k        # Saving results to the file
 
         subsets = k*[0]
         subsets_count = k*[0]
 
-        for i in range(self.n):
+        for i in range(set_len):
             ind = math.floor(i/m)
 
             subsets[ind] += math.pow(abs(set1[i] - set2[i]), p)
@@ -94,21 +93,26 @@ class Lab:
 
         print(subsets)
         print(subsets_count)
-        print("Calculations completed!")
+        # print("Calculations completed!")
 
         # Saving results (lab3)
         # self.lab3_saving_results(subsets, subsets_count, set_name, p, k, set1, set2)
         return subsets, subsets_count
 
-    def lab4_zad1(self, width, p, k):
+    def lab4_zad1(self, width, p):
         k = math.floor((width/100)*self.n)
         result_euclidean = []
 
         for i in range(self.n - k):
-            set1 = self.csv_file['Open'][i:k+1]
-            set2 = self.csv_file['Close'][i:k+1]
-            subsets, subsets_count = self.Minkowski_standard(p, k, set1, set2)
+            set1 = self.csv_file['Open'][i:k+1].copy()
+            set2 = self.csv_file['Close'][i:k+1].copy()
+            # print(f"set1[0]: {set1[0]}")
+            subsets, subsets_count = self.Minkowski_standard(p, 1, set1, set2)
             result_euclidean.append(subsets[0])
+
+        self.csv_file[f'MovingWindow{width}'] = result_euclidean
+        self.csv_file.to_csv(self.csv_file_path, index=False)
+
         return
 
     # Saving results to the file (lab3)
@@ -175,9 +179,12 @@ class Lab:
         return
 
     # Method deleting the pair of existing columns transformed by powering them with value of 'p'
-    def Power_del(self, p):
-        del self.csv_file[f'OpenPower{p}']
-        del self.csv_file[f'ClosePower{p}']
+    def Column_del(self, columnName, p=0):
+        if p != 0:
+            del self.csv_file[f'OpenPower{p}']
+            del self.csv_file[f'ClosePower{p}']
+        if columnName is not None:
+            del self.csv_file[columnName]
         self.csv_file.to_csv(self.csv_file_path, index=False)
         print(f"Deleted columns transformed with power {p}")
 
@@ -223,19 +230,25 @@ if __name__ == "__main__":
     power = 5
     sets = 10
     choice = 5  # Choose a set:  1. Original  2. Power  3. Detrending
+
+    # Which transformed-with-power sets should be used
     sets_power = 2
 
-    lab = Lab('BTC-USDCopy.csv')
+    lab = Lab('BTC-USD_changed.csv')
 
     # Create a new pair of columns transformed with power "p"
     # lab.Power_set(p)
 
     # Delete an existing pair of columns transformed with power "p"
-    # lab.Power_del(p)
+    # lab.Column_del(None, p)
 
     # Create detrending columns of the original columns
     # lab.Detrending()
 
     # Calculate Minkowski's standard for previously set 'power' and 'sets' values (lab3)
-    lab.choose_sets(power, sets, choice)
+    # lab.choose_sets_lab3(power, sets, choice)
+
+    # Calculate distance for given moving window width
+    width = 1
+    lab.lab4_zad1(width, power)
 
