@@ -1,4 +1,3 @@
-
 import pandas as pd
 import math
 import numpy as np
@@ -124,6 +123,11 @@ class Lab:
 
         self.csv_file[f'MovingWindow{width}'] = result_euclidean
         self.csv_file.to_csv(self.csv_file_path, index=False)
+
+        date = self.csv_file['Date']
+        draw_figure(result_euclidean, result_euclidean, date.to_numpy().flatten(),
+        [0,0], [0,0], choice)
+
         return
 
     def lab4_zad2(self, p):
@@ -149,6 +153,39 @@ class Lab:
             # self.csv_file.to_csv(self.csv_file_path, index=False)
             self.lab3_saving_results(subsets, subsets_count, set_name, p, 1)
         return
+
+
+    def lab4_zad3(self):
+        k = 10
+
+        f = open('results', 'a')
+        f.write(f"Euclidean standard (p = 2) for sets:\n\n")
+        f.write(f"-10%                0%                  +10%\n\n")
+
+        r = self.n/10
+        for i in range(10):
+
+            # -10%
+            shift = self.n//100
+            set1 = list(self.csv_file['Open'][math.ceil(i * r):math.ceil(r * (i + 1) - shift)].copy())
+            set2 = list(self.csv_file['Close'][math.ceil(i * r + shift):math.ceil(r * (i + 1))].copy())
+            subsets, subsets_count = self.Minkowski_standard(2, 1, set1, set2)
+            f.write(f"{subsets[0]:<20}")
+
+
+            # 0%
+            set1 = list(self.csv_file['Open'][math.ceil(i*r):math.ceil(r*(i+1))].copy())
+            set2 = list(self.csv_file['Close'][math.ceil(i*r):math.ceil(r*(i+1))].copy())
+            subsets, subsets_count = self.Minkowski_standard(2, 1, set1, set2)
+            f.write(f"{subsets[0]:<20}")
+
+            # + 10%
+            set1 = list(self.csv_file['Open'][math.ceil(i * r + shift):math.ceil(r * (i + 1))].copy())
+            set2 = list(self.csv_file['Close'][math.ceil(i * r):math.ceil(r * (i + 1) - shift)].copy())
+            subsets, subsets_count = self.Minkowski_standard(2, 1, set1, set2)
+            f.write(f"{subsets[0]:<20}\n")
+        f.write('\n\n')
+
 
     # Saving results to the file (lab3)
     def lab3_saving_results(self, subsets, subsets_count, set_name, p, k, set1=None, set2=None):
@@ -260,6 +297,113 @@ class Lab:
         return 0
 
 
+    def arithmetic_mean(self, set1, set2, l):
+
+        am = 0
+
+        for i in range(l):
+            am += set2[i] + set1[i]
+
+        am /= 2 * l
+        return am
+
+    def increase_mean(self, set1, set2, l):
+        am = 0
+
+        for i in range(l):
+            am += set2[i] - set1[i]
+
+        am /= l
+        return am
+
+    def Pearson(self, set1, set2, l):
+        am1 = 0
+        am2 = 0
+        for i in range(l):
+            am1 += set1[i]
+            am2 += set2[i]
+        am1 /= l
+        am2 /= l
+
+        numerator = 0
+        denominator1 = 0
+        denominator2 = 0
+
+        for i in range(l):
+            numerator += (set1[i] - am1) * (set2[i] - am2)
+            denominator1 += (set1[i] - am1) * (set1[i] - am1)
+            denominator2 += (set2[i] - am2) * (set2[i] - am2)
+
+        pearson = numerator / (math.sqrt(denominator1) * math.sqrt(denominator2))
+        return pearson
+
+    def lab5_zad2(self, ranges):
+        #  ranges = [[L1, L2], [L1, L2], ..., [L1, L2]]
+
+        n = len(ranges)
+        results = [[[0.0 for _ in range(4)] for _ in range(3)] for _ in range(n)]
+
+        for i in range(n):
+
+            W = ranges[i][1] - ranges[i][0]
+            set1 = list(self.csv_file['Open'][ranges[i][0]: ranges[i][1]].copy())
+            set2 = list(self.csv_file['Close'][ranges[i][0]: ranges[i][1]].copy())
+            results[i][0][0] = self.arithmetic_mean(set1, set2, W)
+            results[i][0][1] = self.increase_mean(set1, set2, W)
+            a, b = self.Minkowski_standard(2, 1, set1, set2)
+            results[i][0][2] = a[0]
+            results[i][0][3] = self.Pearson(set1, set2, W)
+
+            set1 = list(self.csv_file['Open'][ranges[i][0]: ranges[i][1]].copy())
+            set2 = list(self.csv_file['Close'][ranges[i][0] + W: ranges[i][1] + W].copy())
+            results[i][1][0] = self.arithmetic_mean(set1, set2, W)
+            results[i][1][1] = self.increase_mean(set1, set2, W)
+            a, b = self.Minkowski_standard(2, 1, set1, set2)
+            results[i][1][2] = a[0]
+            results[i][1][3] = self.Pearson(set1, set2, W)
+
+            set1 = list(self.csv_file['Open'][ranges[i][0] + W: ranges[i][1] + W].copy())
+            set2 = list(self.csv_file['Close'][ranges[i][0]: ranges[i][1]].copy())
+            results[i][2][0] = self.arithmetic_mean(set1, set2, W)
+            results[i][2][1] = self.increase_mean(set1, set2, W)
+            a, b = self.Minkowski_standard(2, 1, set1, set2)
+            results[i][2][2] = a[0]
+            results[i][2][3] = self.Pearson(set1, set2, W)
+
+        return results
+
+    def lab5_zad3(self, results, ranges):
+
+        n = len(results)
+        f = open('results', 'a')
+        f.write('\n\n============== Lab5 ==========\n\n')
+        f.write("1st column - arithmetic mean\n"
+                "2nd column - increase mean\n"
+                "3rd column - euclidean distance\n"
+                "4th column - Pearson product-moment correlation coefficient\n\n")
+
+        for p in range(3):
+            if p == 0:
+                f.write("concurrently\n")
+            elif p == 1:
+                f.write("second set W shifted\n")
+            elif p == 2:
+                f.write("first set W shifted\n")
+            for i in range(1, n):
+                j = 0
+                comment = ""
+                for k in range(4):
+                    if abs(results[i-1][p][k]/10) < abs(results[i][p][k] - results[i-1][p][k]):
+                        j += 1
+                        comment += f'{k+1}; '
+                if j > 1:
+                    f.write(f'range {i}: {ranges[i][0]} - {ranges[i][1]}\n')
+                    f.write(f'{results[i][0]} <=== {j} anomalies in columns {comment}\n')
+            f.write("\n")
+
+        f.close()
+
+
 if __name__ == "__main__":
 
     power = 2
@@ -269,7 +413,7 @@ if __name__ == "__main__":
     # Which transformed-with-power sets should be used
     sets_power = 2
 
-    lab = Lab('BTC-USD_lab4.csv')
+    lab = Lab('BTC-USD_changed.csv')
 
     # Create a new pair of columns transformed with power "p"
     # lab.Power_set(p)
@@ -290,5 +434,12 @@ if __name__ == "__main__":
     # lab.lab4_zad1(width, power)
 
     # Calculate distance for specified 3 windows widths (lab 4 task 2)`
-    lab.lab4_zad2(power)
+    # lab.lab4_zad1(1, 2)
+    # lab.lab4_zad2(power)
+    # lab.lab4_zad3()
+
+    # lab 5
+    ran = [[100, 200], [400, 650], [1000, 1200], [1600, 1660], [2000, 2200]]
+    r = lab.lab5_zad2(ran)
+    lab.lab5_zad3(r, ran)
 

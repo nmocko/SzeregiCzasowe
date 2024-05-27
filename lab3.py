@@ -1,4 +1,3 @@
-
 import pandas as pd
 import math
 import numpy as np
@@ -8,26 +7,28 @@ import datetime as dt
 
 
 def draw_figure(set1, set2, dates, min_sim, max_sim, c):
-    dates = [dt.datetime.strptime(d,'%Y-%m-%d').date() for d in dates]
+    dates = [dt.datetime.strptime(d, '%Y-%m-%d').date() for d in dates]
     plt.title('Similarity of opening and closing Bitcoin prices')
     plt.plot(dates, set1, label="open", color="blue", linewidth=0.5)
     plt.plot(dates, set2, label="close", color="green", linewidth=0.5)
-    plt.plot(dates[min_sim[0]:min_sim[1]], set1[min_sim[0]:min_sim[1]], label="the best similarity", color="red", linewidth=1)
+    plt.plot(dates[min_sim[0]:min_sim[1]], set1[min_sim[0]:min_sim[1]], label="the best similarity", color="red",
+             linewidth=1)
     plt.plot(dates[min_sim[0]:min_sim[1]], set2[min_sim[0]:min_sim[1]], color="red", linewidth=1)
-    plt.plot(dates[max_sim[0]:max_sim[1]], set1[max_sim[0]:max_sim[1]], label="the weakest similarity", color="black", linewidth=1)
+    plt.plot(dates[max_sim[0]:max_sim[1]], set1[max_sim[0]:max_sim[1]], label="the weakest similarity", color="black",
+             linewidth=1)
     plt.plot(dates[max_sim[0]:max_sim[1]], set2[max_sim[0]:max_sim[1]], color="black", linewidth=1)
-    
+
     plt.xlabel('date')
     plt.ylabel('price in USD')
     plt.legend()
     plt.savefig(f'figure_{c}')
     plt.show()
 
-class Lab3:
 
+class Lab3:
     csv_file = None
     csv_file_path = ''
-    n = 0      # Number of rows
+    n = 0  # Number of rows
 
     def __init__(self, file_path):
         self.csv_file_path = file_path
@@ -45,7 +46,7 @@ class Lab3:
         set_name = ''
         set1 = []
         set2 = []
-        
+
         choice = 0
         while 1:
             try:
@@ -55,7 +56,7 @@ class Lab3:
                         set_name = "Original"
                         set1 = self.csv_file['Open']
                         set2 = self.csv_file['Close']
-			
+
                     case 2:
 
                         while 1:
@@ -91,17 +92,17 @@ class Lab3:
 
         print("Calculating...")
         m = self.n / k
-        subsets = k*[0]
-        subsets_count = k*[0]
+        subsets = k * [0]
+        subsets_count = k * [0]
 
         for i in range(self.n):
-            ind = math.floor(i/m)
+            ind = math.floor(i / m)
 
             subsets[ind] += math.pow(abs(set1[i] - set2[i]), p)
             subsets_count[ind] += 1
 
         for i in range(k):
-            subsets[i] = math.pow(subsets[i]/subsets_count[i], 1/p)
+            subsets[i] = math.pow(subsets[i] / subsets_count[i], 1 / p)
 
         print(subsets)
         print(subsets_count)
@@ -148,10 +149,11 @@ class Lab3:
                 f"============================\n\n")
         f.close()
         print("Calculations completed!")
-        
+
         print("Drawing a figure\nClose window to continue!")
         date = self.csv_file['Date']
-        draw_figure(set1.to_numpy().flatten(), set2.to_numpy().flatten(), date.to_numpy().flatten(),  [min_begin_ind, min_end_ind], [max_begin_ind, max_end_ind], choice)
+        draw_figure(set1.to_numpy().flatten(), set2.to_numpy().flatten(), date.to_numpy().flatten(),
+                    [min_begin_ind, min_end_ind], [max_begin_ind, max_end_ind], choice)
 
     # Method creating a new pair of columns transformed by powering them with value of 'p'
     def Power_set(self, p):
@@ -160,8 +162,8 @@ class Lab3:
 
         print("Creating new columns...")
         for i in range(self.n):
-            trsf_set1.append(self.csv_file['Open'][i]**p)
-            trsf_set2.append(self.csv_file['Close'][i]**p)
+            trsf_set1.append(self.csv_file['Open'][i] ** p)
+            trsf_set2.append(self.csv_file['Close'][i] ** p)
 
         self.csv_file[f'OpenPower{p}'] = trsf_set1
         self.csv_file[f'ClosePower{p}'] = trsf_set2
@@ -181,7 +183,7 @@ class Lab3:
         detr_set1 = []  # Column to create and add, de-trended "Open" column
         detr_set2 = []  # Column to create and add, de-trended "Open" column
 
-        x = np.array([(i+1) for i in range(self.n)]).reshape(-1, 1)
+        x = np.array([(i + 1) for i in range(self.n)]).reshape(-1, 1)
         y1 = self.csv_file['Open'].values
         y1 = np.array(y1)
         y2 = self.csv_file['Close'].values
@@ -199,8 +201,8 @@ class Lab3:
         b2 = reg2.intercept_
 
         for i in range(self.n):
-            subtract_value1 = (i+1)*a1 + b1
-            subtract_value2 = (i+1)*a2 + b2
+            subtract_value1 = (i + 1) * a1 + b1
+            subtract_value2 = (i + 1) * a2 + b2
 
             detr_set1.append(self.csv_file['Open'][i] - subtract_value1)
             detr_set2.append(self.csv_file['Close'][i] - subtract_value2)
@@ -213,7 +215,6 @@ class Lab3:
 
 
 if __name__ == "__main__":
-
     power = 5
     sets = 10
     lab3 = Lab3('BTC-USD.csv')
@@ -229,4 +230,3 @@ if __name__ == "__main__":
 
     # Calculate Minkowski's standard for previously set 'power' and 'sets' values
     lab3.Minkowski_standard(power, sets)
-
